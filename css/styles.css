@@ -432,6 +432,40 @@ main p{
 
 .info-acerca-de{
 	min-height: 80vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.vision, .mision, .que-hacemos{
+	height: 60vh;
+	width: 20em;
+	font-family: var(--signika);
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	transition: .1s;
+}
+
+.vision:hover, .mision:hover, .que-hacemos:hover{
+	outline: 3px solid var(--cyan);
+}
+
+.cabecera{
+	text-align: center;
+	background: #f1f1f1;
+	padding: 3em;
+	font-weight: 800;
+	font-size: 20px;
+}
+
+.texto{
+	padding: 2.5em;
+	background: #f9f9f9;
+	overflow: auto;
+	height: auto;
 }
 
 /*---------------------Contactanos_-------------------*/
