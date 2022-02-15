@@ -445,12 +445,16 @@ main p{
 	font-family: var(--signika);
 	display: flex;
 	flex-direction: column;
-	border-radius: 10px;
 	transition: .1s;
 }
 
 .vision:hover, .mision:hover, .que-hacemos:hover{
 	outline: 3px solid var(--cyan);
+}
+
+.vision:hover .cabecera, .mision:hover .cabecera, .que-hacemos:hover .cabecera{
+	background: var(--cyan);
+	color: var(--white);
 }
 
 .cabecera{
@@ -459,6 +463,7 @@ main p{
 	padding: 3em;
 	font-weight: 800;
 	font-size: 20px;
+	transition: .2s;
 }
 
 .texto{
@@ -476,6 +481,75 @@ main p{
 	background: linear-gradient(var(--transparent-black), var(--transparent-black)), url('../imgs/contactanos.jpg');
 	background-size: cover;
 	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenedor-form{
+	margin: 5em;
+	padding: 7em 5em;
+	background: var(--transparent-black);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	color: var(--white);
+	font-family: var(--nunito);
+	width: 80vw;
+}
+
+.contenedor-form div{
+	width: 30vw;
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+	font-size: calc(100% + 2px);
+}
+
+.contenedor-form .info-contacto{
+	display: flex;
+	gap: 0.2em;
+}
+
+.form{
+	display: inline-flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.form input, .form textarea{
+	width: 100%;
+	padding: 0.5em;
+	border: none;
+	border-bottom: 2px solid var(--white);
+	background: none;
+	font-family: var(--nunito);
+	font-size: 1.2em;
+	font-weight: 800;
+	color: var(--white);
+	margin-bottom: 1em;
+}
+
+.form input:focus, .form textarea:focus{
+	outline: none;
+	border-width: 3px;
+}
+
+.form input::placeholder{
+	padding-left: 1em;
+}
+
+.form input:last-of-type{
+	width: 50%;
+	background: var(--cyan) !important;
+	margin: 0 auto;
+}
+
+.form input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
 }
 
 /*-----------------------Footer----------------------*/
@@ -586,6 +660,14 @@ footer .autor i{
 
 .cyan{
 	background: var(--cyan);
+}
+
+.p-1{
+	padding: 1em;
+}
+
+.p-2{
+	padding: 2em;
 }
 
 /*---------------------Animaciones---------------------*/
