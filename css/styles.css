@@ -409,6 +409,10 @@ main p{
 	position: relative;
 }
 
+.main-acerca-de h1{
+	animation: entrar-der 1s ease-in-out;
+}
+
 .main-acerca-de::before{
 	position: absolute;
 	content: '';
@@ -493,10 +497,17 @@ main p{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: center;
 	color: var(--white);
 	font-family: var(--nunito);
 	width: 80vw;
+	transition: .5s;
 }
+
+.contenedor-form:hover{
+	background: rgba(0, 0, 0, .8);
+}
+
 
 .contenedor-form div{
 	width: 30vw;
@@ -508,13 +519,18 @@ main p{
 
 .contenedor-form .info-contacto{
 	display: flex;
-	gap: 0.2em;
+	gap: 5px;
 }
 
 .form{
 	display: inline-flex;
 	flex-direction: column;
 	width: 50%;
+	z-index: 2;
+}
+
+.form h2{
+	margin-bottom: 1em;
 }
 
 .form input, .form textarea{
@@ -530,26 +546,60 @@ main p{
 	margin-bottom: 1em;
 }
 
+.form textarea{
+	height: 8em;
+	margin-top: 0.8em;
+}
+
 .form input:focus, .form textarea:focus{
 	outline: none;
 	border-width: 3px;
 }
 
 .form input::placeholder{
-	padding-left: 1em;
+	padding-left: 0.5em;
 }
 
 .form input:last-of-type{
 	width: 50%;
 	background: var(--cyan) !important;
-	margin: 0 auto;
+	margin: 0.5em auto;
 }
 
-.form input[type="number"]
-{
-    -webkit-appearance: textfield !important;
+.form input[type=number]::-webkit-inner-spin-button, .form input[type=number],
+  .form input[type=number]::-webkit-outer-spin-button{
+  	-webkit-appearance: none;
     margin: 0;
     -moz-appearance:textfield !important;
+}
+
+.lines {
+	color: #fff;
+	position: relative;
+}
+
+.lines svg {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	fill: none;
+}
+
+.lines rect {
+	width: 100%;
+	height: 100%;
+	stroke: var(--cyan);
+	stroke-width: 10px;
+	stroke-dasharray: 300;
+	stroke-dashoffset: 400;
+	transition: .6s ease all;
+}
+
+.lines:hover rect {
+	stroke-dashoffset: 0;
 }
 
 /*-----------------------Footer----------------------*/
@@ -691,6 +741,16 @@ footer .autor i{
 @keyframes entrar{
 	from{
 		transform: translateX(-220px);
+		opacity: 0;
+	}to{
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes entrar-der{
+	from{
+		transform: translateX(220px);
 		opacity: 0;
 	}to{
 		transform: translateX(0px);
